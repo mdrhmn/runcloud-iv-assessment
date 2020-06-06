@@ -6,7 +6,8 @@ This is my submission for the RunCloud Internship Assessment for my internship a
 
 ## Sample Output:
 
-`RunCloud Assessment!
+```
+RunCloud Assessment!
 
 
 Flow #1 Basic Plan Subscription!
@@ -24,4 +25,5 @@ Server 2 connection successful.
 Flow #3 Unsubscribe Plan Subscription!
 
 Server(s) disconnected. Unsubscribed to Pro Plan.
-Server 2 connection unsuccessful. You are not subscribed to any plans at RunCloud.`
+Server 2 connection unsuccessful. You are not subscribed to any plans at RunCloud.
+```
