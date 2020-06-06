@@ -74,6 +74,7 @@ class User
         if (Plan::$status == "BasicPlan") {
             if ($this->no_of_connections == 0 && $this->connection == null) {
                 array_push($this->connection ,$server->ipAddress);
+                $server->no_of_connections++;
                 $this->no_of_connections++;
                 echo "Server connection successful.\n";
             } else {
@@ -81,6 +82,7 @@ class User
             }
         } else if (Plan::$status == "ProPlan" || Plan::$status == "BizPlan") {
             array_push($this->connection ,$server->ipAddress);
+            $server->no_of_connections++;
             $this->no_of_connections++;
             echo "Server connection successful.\n";
         } else {
