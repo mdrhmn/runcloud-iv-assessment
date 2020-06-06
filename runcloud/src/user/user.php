@@ -48,7 +48,7 @@ class User
                 $this->user_status = 3;
                 echo "Subscribed to Business Plan.\n";
             } else if ($this->user_status == 3) {
-                echo "You have already subscribed to Pro Plan.\n";
+                echo "You have already subscribed to Business Plan.\n";
             } else {
                 $this->user_status = 3;
                 echo "Changed plan to Business Plan.\n";
