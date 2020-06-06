@@ -10,8 +10,8 @@ class BasicPlan extends Plan
     public function __construct()
     {
         parent::__construct();
-        $this->status = "BasicPlan";
-        $this->set_status("BasicPlan");
+        $this->status = "Basic Plan";
+        $this->set_status("Basic Plan");
     }
 
     public function set_status($newStatus)
