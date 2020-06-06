@@ -61,7 +61,7 @@ class User
         if (Plan::$status == null)
             echo "You have not subscribed to any plans.\n";
         else {
-            echo "Server disconnected. Unsubscribed to ".Plan::$status.".\n";
+            echo "Server(s) disconnected. Unsubscribed to ".Plan::$status.".\n";
             Plan::$status = null;
             $this->connection = array();
             $this->user_status = 0;
@@ -76,17 +76,17 @@ class User
                 array_push($this->connection ,$server->ipAddress);
                 $server->no_of_connections++;
                 $this->no_of_connections++;
-                echo "Server connection successful.\n";
+                echo $server->name." connection successful.\n";
             } else {
-                echo "Server connection unsuccessful. Basic Plan allows for maximum 1 connection only.\n";
+                echo $server->name." connection unsuccessful. Basic Plan allows for maximum 1 connection only.\n";
             }
         } else if (Plan::$status == "Pro Plan" || Plan::$status == "Business Plan") {
             array_push($this->connection, $server->ipAddress);
             $server->no_of_connections++;
             $this->no_of_connections++;
-            echo "Server connection successful.\n";
+            echo $server->name." connection successful.\n";
         } else {
-            echo "Server connection unsuccessful. You are not subscribed to any plans.\n";
+            echo $server->name." connection unsuccessful. You are not subscribed to any plans.\n";
         }
     }
 }
