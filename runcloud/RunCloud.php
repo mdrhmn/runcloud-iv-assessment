@@ -30,7 +30,6 @@
  */
 
 use RunCloud\db\Server;
-use RunCloud\plan\Plan;
 use RunCloud\plan\types\BasicPlan;
 use RunCloud\plan\types\BusinessPlan;
 use RunCloud\plan\types\ProPlan;
