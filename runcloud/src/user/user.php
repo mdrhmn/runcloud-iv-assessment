@@ -23,7 +23,7 @@ class User
 
     public function subscribe(Plan $plan)
     {
-        if ($plan->status == "BasicPlan") {
+        if ($plan->status == "Basic Plan") {
             if ($this->user_status == 0) {
                 $this->user_status = 1;
                 echo "Subscribed to Basic Plan.\n";
@@ -33,7 +33,7 @@ class User
                 $this->user_status = 1;
                 echo "Changed plan to Basic Plan.\n";
             }
-        } else if ($plan->status == "ProPlan") {
+        } else if ($plan->status == "Pro Plan") {
             if ($this->user_status == 0) {
                 $this->user_status = 2;
                 echo "Subscribed to Pro Plan.\n";
@@ -43,7 +43,7 @@ class User
                 $this->user_status = 2;
                 echo "Changed plan to Pro Plan.\n";
             }
-        } else if ($plan->status == "BizPlan") {
+        } else if ($plan->status == "Business Plan") {
             if ($this->user_status == 0) {
                 $this->user_status = 3;
                 echo "Subscribed to Business Plan.\n";
@@ -71,7 +71,7 @@ class User
 
     public function connectServer(Server $server)
     {
-        if (Plan::$status == "BasicPlan") {
+        if (Plan::$status == "Basic Plan") {
             if ($this->no_of_connections == 0 && $this->connection == null) {
                 array_push($this->connection ,$server->ipAddress);
                 $server->no_of_connections++;
@@ -80,7 +80,7 @@ class User
             } else {
                 echo "Server connection unsuccessful. Basic Plan allows for maximum 1 connection only.\n";
             }
-        } else if (Plan::$status == "ProPlan" || Plan::$status == "BizPlan") {
+        } else if (Plan::$status == "Pro Plan" || Plan::$status == "Business Plan") {
             array_push($this->connection, $server->ipAddress);
             $server->no_of_connections++;
             $this->no_of_connections++;
