@@ -9,8 +9,8 @@ class BusinessPlan extends Plan {
     public function __construct()
     {
         parent::__construct();
-        $this->status = "BizPlan";
-        $this->set_status("BizPlan");
+        $this->status = "Business Plan";
+        $this->set_status("Business Plan");
     }
 
     public function set_status($newStatus)
