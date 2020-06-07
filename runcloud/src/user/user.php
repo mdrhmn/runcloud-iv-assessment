@@ -78,7 +78,8 @@ class User
                 $this->no_of_connections++;
                 echo $server->name." connection successful.\n";
             } else {
-                echo $server->name." connection unsuccessful. Basic Plan allows for maximum 1 connection only.\n";
+                echo $server->name." connection unsuccessful. Basic Plan allows for maximum 1 server connection only.\n";
+                echo "Upgrade to Pro/Business Plan to have access of connecting to more than 1 server.\n";
             }
         } else if (Plan::$status == "Pro Plan" || Plan::$status == "Business Plan") {
             array_push($this->connection, $server->ipAddress);
@@ -86,7 +87,7 @@ class User
             $this->no_of_connections++;
             echo $server->name." connection successful.\n";
         } else {
-            echo $server->name." connection unsuccessful. You are not subscribed to any plans.\n";
+            echo $server->name." connection unsuccessful. You are not subscribed to any plans at RunCloud.\n";
         }
     }
 }
