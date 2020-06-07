@@ -15,7 +15,7 @@ Flow #1 Basic Plan Subscription!
 Subscribed to Basic Plan.
 Server 1 connection successful.
 Server 2 connection unsuccessful. Basic Plan allows for maximum 1 server connection only.
-Upgrade to Pro/Business plan to have access of connecting to more than 1 server.
+Upgrade to Pro/Business Plan to have access of connecting to more than 1 server.
 
 Flow #2 Upgrade Plan Subscription!
 
