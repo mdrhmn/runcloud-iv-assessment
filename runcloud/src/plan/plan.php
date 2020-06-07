@@ -11,11 +11,6 @@ abstract class Plan {
         $this->status = null;
     }
 
-    public function reset()
-    {
-        self::$status = null;
-    }
-
     public abstract function set_status($newStatus);
 
 }
