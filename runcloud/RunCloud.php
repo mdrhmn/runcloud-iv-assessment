@@ -75,7 +75,6 @@ print "\nFlow #2 Upgrade Plan Subscription!\n\n";
 // Upgrade to pro/business plan to have acccess 
 // of connecting more than 1 server.
 $user->subscribe(new ProPlan());
-$user->subscribe(new ProPlan());
 $user->connectServer($server_2); // success
 
 /*
