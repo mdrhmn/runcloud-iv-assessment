@@ -61,7 +61,7 @@ class User
         if (Plan::$status == null)
             echo "You have not subscribed to any plans.\n";
         else {
-            echo "Server(s) disconnected. Unsubscribed to ".Plan::$status.".\n";
+            echo "Server(s) disconnected. Unsubscribed to " . Plan::$status . ".\n";
             Plan::$status = null;
             $this->connection = array();
             $this->user_status = 0;
@@ -73,21 +73,30 @@ class User
     {
         if (Plan::$status == "Basic Plan") {
             if ($this->no_of_connections == 0 && $this->connection == null) {
-                array_push($this->connection ,$server->ipAddress);
-                $server->no_of_connections++;
-                $this->no_of_connections++;
-                echo $server->name." connection successful.\n";
+
+                if (!in_array($server->ipAddress, $this->connection)) {
+                    array_push($this->connection, $server->ipAddress);
+                    $server->no_of_connections++;
+                    $this->no_of_connections++;
+                    echo $server->name . " connection successful.\n";
+                } else {
+                    echo "You are already connected to " . $server->name . ".\n";
+                }
             } else {
-                echo $server->name." connection unsuccessful. Basic Plan allows for maximum 1 server connection only.\n";
+                echo $server->name . " connection unsuccessful. Basic Plan allows for maximum 1 server connection only.\n";
                 echo "Upgrade to Pro/Business Plan to have access of connecting to more than 1 server.\n";
             }
         } else if (Plan::$status == "Pro Plan" || Plan::$status == "Business Plan") {
-            array_push($this->connection, $server->ipAddress);
-            $server->no_of_connections++;
-            $this->no_of_connections++;
-            echo $server->name." connection successful.\n";
+            if (!in_array($server->ipAddress, $this->connection)) {
+                array_push($this->connection, $server->ipAddress);
+                $server->no_of_connections++;
+                $this->no_of_connections++;
+                echo $server->name . " connection successful.\n";
+            } else {
+                echo "You are already connected to " . $server->name . ".\n";
+            }
         } else {
-            echo $server->name." connection unsuccessful. You are not subscribed to any plans at RunCloud.\n";
+            echo $server->name . " connection unsuccessful. You are not subscribed to any plans at RunCloud.\n";
         }
     }
 }
